@@ -16,11 +16,10 @@ public class EnfermeraDAOImpl implements EnfermeraDAO {
     public EnfermeraDAOImpl() {
         objConexion = new Conexion();
     }
-    @Override
-    
+    @Override    
     public List <Enfermera> findAll() {
         //Consulta SQL que se tiene que realizar
-        String consulta = "SELECT *FROM enfermeras";
+        String consulta = "SELECT * FROM enfermeras";
         // Listado de datos que se retorna
         
        List <Enfermera> listado = new LinkedList<>();
@@ -53,18 +52,15 @@ public class EnfermeraDAOImpl implements EnfermeraDAO {
 
     @Override
     public Enfermera insert(Enfermera objEnfermera) {
-        String consulta = "INSERT INTO enfermeras( nombre, especialidad , telefono, email) VALUES (?,?,?,?)";
+        String consulta = "INSERT INTO enfermeras(nombre, especialidad , telefono, email) VALUES (?,?,?,?)";
         try{
             this.objConexion.conectar();
             this.objConnection = this.objConexion.getJdbcConnection();
 
-        this.objConexion.conectar();
-        this.objConnection = this.objConexion.getJdbcConnection();
-
-        PreparedStatement prest = this.objConnection.prepareStatement(consulta);
+            PreparedStatement prest = this.objConnection.prepareStatement(consulta);
 
         prest.setString(1, objEnfermera.getNombre());
-        prest.setString(2, objEnfermera.getEspecialidad());
+        prest.setString(2, objEnfermera.getEspecilaidad());
         prest.setString(3, objEnfermera.getTelefono());
         prest.setString(4, objEnfermera.getEmail());
 
