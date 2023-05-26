@@ -31,7 +31,7 @@
             </div>
         </nav>
 
-        <h1 class="text-center text-primary">Regitro de Enfermera</h1>
+        <h1 class="text-center text-primary">Registro de Enfermera</h1>
         <div class="container">
             <form action="<%= request.getContextPath()%>/EnfermeraServlet?action=create" method="POST">
                 <div class="mb-3">
